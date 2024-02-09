@@ -9,3 +9,9 @@ const flashdataHTML = document.createElement('div');
                <a href="javascript:void(0)" onclick="this.closest('.flashdata').remove()" class="flashdata-close"><i class="far fa-times-circle"></i></a>
            </div>
        </div>`;
+function start_loader(){
+    if($('#pre-loader').length > 0)
+        $('#pre-loader').remove()
+    $('body').prepend(loaderHTML)
+    $('body, html').css('overflow', 'hidden')
+}
