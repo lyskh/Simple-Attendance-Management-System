@@ -14,3 +14,34 @@ class Actions{
                 $_POST[$k] = addslashes(htmlspecialchars($v));
             }
         }
+        extract($_POST);
+
+        if(!empty($id)){
+            $check = $this->conn->query("SELECT id FROM `class_tbl` where `name` = '{$name}' and `id` != '{$id}' ");
+            $sql = "UPDATE `class_tbl` set `name` = '{$name}' where `id` = '{$id}'";
+        }else{
+            
+            $check = $this->conn->query("SELECT id FROM `class_tbl` where `name` = '{$name}' ");
+            $sql = "INSERT `class_tbl` set `name` = '{$name}'";
+        }
+        if($check->num_rows > 0){
+            return ['status' => 'error', 'msg' => 'Class Name Already Exists!'];
+        }else{
+            $qry = $this->conn->query($sql);
+            if($qry){
+                if(empty($id)){
+                    $_SESSION['flashdata'] = [ 'type' => 'success', 'msg' => "New Class has been added successfully!" ];
+                }else{
+                    $_SESSION['flashdata'] = [ 'type' => 'success', 'msg' => "Class Data has been updated successfully!" ];
+                }
+                return [ 'status' => 'success'];
+            }else{
+                if(empty($id)){
+                    return ['status' => 'error', 'msg' => 'An error occurred while saving the New Class!'];
+                }else{
+                    return ['status' => 'error', 'msg' => 'An error occurred while updating the Class Data!'];
+                }
+            }
+        }
+        
+    }
