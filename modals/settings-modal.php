@@ -27,3 +27,22 @@ $invoice_settings = array_column($invoice_settings_qry, 'meta_value', 'meta_fiel
                             <input type="text" class="form-control" id="store_contact" name="store_contact" value="<?= $invoice_settings['store_contact'] ?? "" ?>" required="required">
                         </div>
                         <div class="mb-3">
+                          <label for="store_contact" class="form-label">Store Contact</label>
+                            <input type="text" class="form-control" id="store_contact" name="store_contact" value="<?= $invoice_settings['store_contact'] ?? "" ?>" required="required">
+                        </div>
+                        <div class="mb-3">
+                        <label for="store_contact" class="form-label">Footer Note</label>
+                            <textarea rows="3" class="form-control" id="footer_note" name="footer_note" required="required"><?= $invoice_settings['footer_note'] ?? "" ?></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer rounded-0">
+        <button type="submit" form="settings-form" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
