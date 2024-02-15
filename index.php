@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once('classes/actions.class.php');
+    require_once('classes/action.class.php');
     $actionClass = new Actions();
     $page = $_GET['page'] ?? "home";
     $page_title = ucwords(str_replace("_", " ", $page));
