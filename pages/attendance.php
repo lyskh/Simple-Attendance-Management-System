@@ -1,6 +1,9 @@
 <div class="page-title mb-3">Manage Attendance</div>
 <hr>
+
 <?php 
+
+
 // $studentList = $actionClass->list_student();
 $classList = $actionClass->list_class();
 $class_id = $_GET['class_id'] ?? "";
