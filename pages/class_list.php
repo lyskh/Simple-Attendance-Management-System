@@ -6,9 +6,9 @@ $classList = $actionClass->list_class();
 <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10 col-sm-12 col-12">
         <div class="card shadow">
-            <div class="card-header rounded-1">
+            <div class="card-header rounded-0">
                 <div class="d-flex w-100 justify-content-end align-items-center">
-                    <button class="btn btn-sm rounded-1 btn-primary" type="button" id="add_class"><i class="far fa-plus-square"></i> Add New</button>
+                    <button class="btn btn-sm rounded-0 btn-primary" type="button" id="add_class"><i class="far fa-plus-square"></i> Add New</button>
                 </div>
             </div>
             <div class="card-body rounded-0">
